@@ -74,7 +74,7 @@ bot.on('ready', () => {
 });
 
 /* ============================================================================
- * Helper function for local development. When BE_QUIET is true, print to 
+ * Helper function for local development. While GO_LIVE is not true, print to 
  * console instead of spamming discord...
  * ========================================================================= */
 const say = (channel, msg) => {
