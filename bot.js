@@ -61,7 +61,7 @@ bot.on('ready', () => {
           const { CronJob } = require('cron');
 
           const cron = new CronJob(`* 37 13 * * *`, () => {
-            say(MESSAGE);
+            say(channel, MESSAGE);
 
           }, null, true, TZ);
 
