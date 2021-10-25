@@ -15,6 +15,7 @@ const GREETING = process.env.GREETING;
  * If not, all output go to console instead! Great during development :)
  * ========================================================================= */
 let GO_LIVE = false;
+
 switch (process.env.GO_LIVE) {
   case 'true':
     console.log("GO_LIVE=true : All output go to discord.")
@@ -27,7 +28,7 @@ switch (process.env.GO_LIVE) {
 /* ============================================================================
  * Create discord bot
  * ========================================================================= */
-const { Client } = new require('discord.js');
+const { Client } = require('discord.js');
 const bot = new Client();
 
 /* ============================================================================
@@ -60,15 +61,16 @@ bot.on('ready', () => {
           // Create a new cronjob which prints message in the correct channel
           const { CronJob } = require('cron');
 
-          const cron = new CronJob(`* 37 13 * * *`, () => {
+          const cron = new CronJob('* 37 13 * * *', () => {
             say(channel, MESSAGE);
-
           }, null, true, TZ);
 
         });
+
     }
 
   });
+
 });
 
 /* ============================================================================
