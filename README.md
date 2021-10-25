@@ -9,7 +9,7 @@ Create a `.env` file contaning the requred keys/values, or use other means to fe
 TOKEN=<Your bot token here>
 CHANNEL=<Name of discord channel to put messages in>
 MESSAGE=<The message to print at 13:37>
-GREETING=<The message to print when bot logs in>
+GREETING=<The message to print when bot logs in> (Leave blank for no greeting on startup)
 TZ=<Timezone> (ie CET for Central European>)
 GO_LIVE=<true|false>
 ```

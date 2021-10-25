@@ -6,7 +6,9 @@ const TOKEN = process.env.TOKEN;
 const CHANNEL = process.env.CHANNEL || 'test';
 const TZ = process.env.TZ || 'UTC';
 const MESSAGE = process.env.MESSAGE || "The time is 13:37";
-const GREETING = process.env.GREETING || "The 1337 bot";
+
+// Leave unconfigured for no greeting
+const GREETING = process.env.GREETING;
 
 /* ============================================================================
  * Remember to use `GO_LIVE=true` in .env to enable output to discord. 
@@ -49,7 +51,9 @@ bot.on('ready', () => {
       bot.channels.fetch(item.id)
 
         .then(channel => {
-          say(channel, GREETING);
+
+          // Greet IF we have a greeting defined
+          GREETING && say(channel, GREETING);
 
           // Create a new cronjob which prints message in the correct channel
           const { CronJob } = require('cron');
