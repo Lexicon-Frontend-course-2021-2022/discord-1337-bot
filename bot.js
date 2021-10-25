@@ -53,7 +53,9 @@ bot.on('ready', () => {
         .then(channel => {
 
           // Greet IF we have a greeting defined
-          GREETING && say(channel, GREETING);
+          if (GREETING) {
+            say(channel, GREETING);
+          }
 
           // Create a new cronjob which prints message in the correct channel
           const { CronJob } = require('cron');
