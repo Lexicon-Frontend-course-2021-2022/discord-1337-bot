@@ -61,7 +61,7 @@ bot.on('ready', () => {
           // Create a new cronjob which prints message in the correct channel
           const { CronJob } = require('cron');
 
-          const cron = new CronJob('* 37 13 * * *', () => {
+          const cron = new CronJob('0 37 13 * * *', () => {
             say(channel, MESSAGE);
           }, null, true, TZ);
 
